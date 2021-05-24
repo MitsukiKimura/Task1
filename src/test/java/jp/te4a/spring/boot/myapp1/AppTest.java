@@ -1,6 +1,6 @@
 package jp.te4a.spring.boot.myapp1;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -13,8 +13,11 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void helloSpringWorldTest()
     {
-        assertTrue( true );
+        HelloController hc = new HelloController();
+        String expected = "Hello. Spring Boot!";
+        String actual = hc.index();
+        assertEquals(actual, expected);
     }
 }
